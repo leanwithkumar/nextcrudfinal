@@ -1,12 +1,6 @@
-import Editthis from "./Editthis";
+import Editform from "@/app/components/Editform";
 
-interface EditPageProps {
-  params: {
-    id: string;
-  };
-}
-
-// ✅ Marking this as async (required by Next.js for dynamic routes)
-export default async function Editpage({ params }: EditPageProps) {
-  return <Editthis id={params.id} />;
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params;
+  return <Editform id={resolvedParams.id} />;
 }

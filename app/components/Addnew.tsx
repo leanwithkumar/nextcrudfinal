@@ -9,7 +9,7 @@ function Addnew() {
 
   const handlethis = async()=>{
     try{
-      const res = await axios.post("/api/test",{
+      const res = await axios.post("/api/test/route",{
       title,
       description
     });

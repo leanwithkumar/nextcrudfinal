@@ -16,7 +16,7 @@ function Todo() {
     useEffect(()=>{
         const fetchTodo = async ()=>{
             try{
-              const res = await axios.get("/api/test");
+              const res = await axios.get("/api/test/route");
               setTodo(res.data)
 
             }catch(error){
@@ -29,7 +29,7 @@ function Todo() {
 
     const deletethis = async (id: string)=>{
         try{
-            await axios.delete("/api/test", {params : {id}})
+            await axios.delete("/api/test/route", {params : {id}})
             setTodo((prev) => prev.filter((item) => item._id !== id));
         }catch(error){
             console.log("unable to delete this todo", error)
